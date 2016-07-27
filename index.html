@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn">点击</button>
+	<p id="text"></p>
+	<script>
+	var btn=document.getElementById("btn");
+	var p=document.getElementById("text");
+function ajax(url, fn) {
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function () {
+			if (xhr.readyState === 4) {
+				if (xhr.status === 200 || xhr.status === 304) {
+					fn && fn(xhr.responseText)
+				}
+			}
+		};
+		xhr.open('GET', url, true);
+		xhr.send();
+	}
+	btn.onclick=function(){
+		ajax("data.json",function(res){
+			var result=JSON.parse(res)
+			p.innerHTML=result.demo;
+			p.style.width="200px";
+			p.style.height="30px";
+			p.style.textAlign="center";
+			p.style.lineHeight="30px";
+			p.style.fontSize="24px";
+			p.style.color="orange";
+		})	
+	}
+	p.addEventListener("click",function(){
+		p.style.transition="2s all 0s linear";
+		p.style.transform="translateX(500px) scale(4) rotate(360deg)";
+		setTimeout(function(){
+			p.style.transform="translateY(400px) rotateX(360deg)";
+		},2000)
+		setTimeout(function(){
+			p.style.transform="translateX(400px) rotateX(360deg)";
+		},4000)
+		setTimeout(function(){
+			p.style.display="none";
+		},6000)
+	},false)
+	</script>
+</body>
+</html>
