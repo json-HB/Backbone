@@ -1,6 +1,7 @@
 // skin的View模块
 define(function(require){
 	// 加载css
+	require("modules/skin/skin.css");
 	var arr=[
 "https://gss1.bdstatic.com/5eN1dDebRNRTm2_p8IuM_a/res/r/image/2014-11-24/a9ade02eea646d29e5d05942a56c08f6.jpg",
 "https://gss1.bdstatic.com/5eN1dDebRNRTm2_p8IuM_a/res/r/image/2015-02-10/822fdf40d2a95dbf664b95e14c2cf449.jpg",
