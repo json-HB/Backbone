@@ -1,53 +1,89 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, user-scalable=no">
+	<link rel="stylesheet" href="css/index.css">
 </head>
+<script src="js/sea.js"></script>
+<script src="js/lib/zepto.js"></script>
+<script src="js/lib/zepto.touch.js"></script>
+<script src="js/lib/underscore.js"></script>
+<script src="js/lib/backbone.js"></script>
 <body>
-	<button id="btn">点击</button>
-	<p id="text"></p>
-	<script>
-	var btn=document.getElementById("btn");
-	var p=document.getElementById("text");
-function ajax(url, fn) {
-		var xhr = new XMLHttpRequest();
-		xhr.onreadystatechange = function () {
-			if (xhr.readyState === 4) {
-				if (xhr.status === 200 || xhr.status === 304) {
-					fn && fn(xhr.responseText)
-				}
-			}
-		};
-		xhr.open('GET', url, true);
-		xhr.send();
-	}
-	btn.onclick=function(){
-		ajax("data.json",function(res){
-			var result=JSON.parse(res)
-			p.innerHTML=result.demo;
-			p.style.width="200px";
-			p.style.height="30px";
-			p.style.textAlign="center";
-			p.style.lineHeight="30px";
-			p.style.fontSize="24px";
-			p.style.color="orange";
-		})	
-	}
-	p.addEventListener("click",function(){
-		p.style.transition="2s all 0s linear";
-		p.style.transform="translateX(500px) scale(4) rotate(360deg)";
-		setTimeout(function(){
-			p.style.transform="translateY(400px) rotateX(360deg)";
-		},2000)
-		setTimeout(function(){
-			p.style.transform="translateX(400px) rotateX(360deg)";
-		},4000)
-		setTimeout(function(){
-			p.style.display="none";
-		},6000)
-	},false)
-	</script>
+<div id="header">
+<!-- 首页 -->
+	<section id="skin" class="skin">
+		<div class="skin-btn">
+			<p class="lei">
+				<span data-id="1">风景</span>
+				<span data-id="2">可爱</span>
+				<span data-id="3">美女</span>
+				<span data-id="4">动物</span>
+			</p>
+			<p class="choose">
+				<span class="cancel">取消</span>
+				<span class="sure">确定</span>
+			</p>
+		</div>
+		<div id="unit">
+			<ul></ul>
+		</div>
+		
+	</section>
+	<!-- 图片的列表业 -->
+	<section id="list" class="list">
+		<header class="navbar">
+			<div class="back"><span></span><span></span></div>
+			<div class="login">换肤</div>
+			<h1>季海波的图片网</h1>
+		</header>
+		<div class="search">
+			<input type="text" class="search-input" placeholder="搜索你想要的图片">
+			<span class="search-click">搜一搜</span>
+		</div>
+		<ul class="nav clearfix">
+			<li data-id="0">摄影</li>
+			<li data-id="1">明星</li>
+			<li data-id="2">壁纸</li>
+			<li data-id="3">宠物</li>
+			<li data-id="4">动漫</li>
+			<li data-id="5">风景</li>
+			<li data-id="6">头像</li>
+			<li data-id="7">人物</li>
+		</ul>
+		<div class="image-list">
+			<div class="left-list"></div>
+			<div class="right-list"></div>
+		</div>
+		<div class="go-top">返回顶部</div>
+
+	</section>
+	<!-- 点击图片显示大图页 -->
+	<section id="layer" class="layer"></section>
+	<!-- 大图页的html模板 -->
+	<script type="text/template" id="layer_tpl">
+	<div class="img-container" style="<%=styles%>">
+		<img src="<%=url%>" alt="">
+	</div>
+	<header class="navbar hide">
+		<div href="#" class="back"><span class="arrow"></span><span class="arrow green"></span></div>
+		<h1><%=title%></h1>
+	</header>
+</script>
+</div>
+<script>
+// 加载有先后顺序，导致文件引用的时候依赖关系会报错，所以放在前面加载
+seajs.config({
+	//preload:["lib/zeptoWithFx","lib/underscore","lib/backbone"]
+
+})
+	seajs.use("app",function(app){
+		// 入口函数
+		app();
+	});
+	
+</script>
 </body>
 </html>
