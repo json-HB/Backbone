@@ -47,7 +47,7 @@ define(function(require){
 			else{
 				// 没有则返回列表页
 				window.location.hash="#";
-				$("#layer").css({"left":"100%"});
+				$("#layer").css({"marginLeft":"100%"});
 				// 滚动事件恢复
 				document.onmousewheel=null;
 			}
