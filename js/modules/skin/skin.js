@@ -1,21 +1,20 @@
 // skin的View模块
 define(function(require){
 	// 加载css
-	require("modules/skin/skin.css");
 	var arr=[
-"https://gss1.bdstatic.com/5eN1dDebRNRTm2_p8IuM_a/res/r/image/2014-11-24/a9ade02eea646d29e5d05942a56c08f6.jpg",
-"https://gss1.bdstatic.com/5eN1dDebRNRTm2_p8IuM_a/res/r/image/2015-02-10/822fdf40d2a95dbf664b95e14c2cf449.jpg",
-"https://gss1.bdstatic.com/5eN1dDebRNRTm2_p8IuM_a/res/r/image/2014-11-24/cdfc99ea659f467893b43e0c02160dcf.jpg",
-"https://gss0.bdstatic.com/5eR1dDebRNRTm2_p8IuM_a/res/r/image/2015-04-10/8664eec438f362b0617f2adf7e3e3cd3.jpg",
-"https://gss1.bdstatic.com/5eN1dDebRNRTm2_p8IuM_a/res/r/image/2014-11-24/d25ac6dcf40e0b5ea8a4c0914e85cf62.jpg",
-"https://gss0.bdstatic.com/5eR1dDebRNRTm2_p8IuM_a/res/r/image/2014-11-24/978cb567734a3aa4d29d4d3119a3fc8c.jpg",
-"https://gss0.bdstatic.com/5eR1dDebRNRTm2_p8IuM_a/res/r/image/2015-10-29/bf2d02b808533646f6bc9a70c5bd547f.jpg",
-"https://gss0.bdstatic.com/5eR1dDebRNRTm2_p8IuM_a/res/r/image/2014-11-24/ab74dd0412738c1bf2d57a92faa48a6a.jpg",
-"https://gss0.bdstatic.com/5eR1dDebRNRTm2_p8IuM_a/res/r/image/2014-11-24/496c3e1f5acd2563863a6d67823cbd56.jpg",
-"https://gss1.bdstatic.com/5eN1dDebRNRTm2_p8IuM_a/res/r/image/2014-11-24/d21ad32f9bc291b478fd1a09572f1c56.jpg",
-"https://gss1.bdstatic.com/5eN1dDebRNRTm2_p8IuM_a/res/r/image/2014-11-24/0176d090f9979b055f3bbe94fa22fb2d.jpg",
-"https://gss1.bdstatic.com/5eN1dDebRNRTm2_p8IuM_a/res/r/image/2014-11-23/f83ebfe1f127d644e276f0339a9177d7.jpg"
-	];
+		'https://gss0.bdstatic.com/5eR1dDebRNRTm2_p8IuM_a/res/r/image/2015-08-25/f38093604807c2cc31a84ca4194a0f4e.jpg',
+		'https://gss0.bdstatic.com/5eR1dDebRNRTm2_p8IuM_a/res/r/image/2015-08-25/27fbf0ab0754745cf2b10c7e2309e9a5.jpg',
+		'https://gss0.bdstatic.com/5eR1dDebRNRTm2_p8IuM_a/res/r/image/2015-08-25/1f21ed37e8dd574880fcf893b0051ca9.jpg',
+		'https://gss0.bdstatic.com/5eR1dDebRNRTm2_p8IuM_a/res/r/image/2015-08-25/b430a1dfcea3e9053662d9f57509e731.jpg',
+		'https://gss0.bdstatic.com/5eR1dDebRNRTm2_p8IuM_a/res/r/image/2015-08-25/3be7d0a25df72988ca2d78b4e45aa88f.jpg',
+		'https://www.hao123.com/r/image/2015-08-28/3bc7a03c8a30e719a4bab308efbe2fec.jpg',
+		'https://gss0.bdstatic.com/5eR1dDebRNRTm2_p8IuM_a/res/r/image/2015-10-29/5d91878107d17b97037081a312791fb5.jpg',
+		'https://gss1.bdstatic.com/5eN1dDebRNRTm2_p8IuM_a/res/r/image/2015-08-25/af26c9afaa9118e3c95e6d69bdb4d68d.jpg',
+		'https://gss0.bdstatic.com/5eR1dDebRNRTm2_p8IuM_a/res/r/image/2015-08-25/e0557ce96599f3e9b6bcab6e6c5e0e71.jpg',
+		'https://gss0.bdstatic.com/5eR1dDebRNRTm2_p8IuM_a/res/r/image/2015-08-25/bef59c8e58cb93ef694290d0fef9916b.jpg',
+		'https://gss0.bdstatic.com/5eR1dDebRNRTm2_p8IuM_a/res/r/image/2015-08-25/0a36d2f0a8f90e1adaf788a786343fa2.jpg',
+		'https://gss0.bdstatic.com/5eR1dDebRNRTm2_p8IuM_a/res/r/image/2015-08-25/685c0cfe2db0de1a6b5aa3cf93650d2f.jpg'
+	]
 	var skin=Backbone.View.extend({
 		dom:null,
 		liImgId:1,
