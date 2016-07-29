@@ -35,7 +35,7 @@ define(function(require){
 			// 渲染大图页
 			layerView.render(num);
 			// 动画形式展现
-			$("#layer").css({"left":0});
+			$("#layer").css({"marginLeft":0});
 			
 		}
 
