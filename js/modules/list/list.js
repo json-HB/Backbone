@@ -113,7 +113,9 @@ define(function(require){
 		$("#layer").css({"left":"0%"})
 	},
 	// 返回顶部
-	showTop:function(){
+	showTop:function(ev){
+		ev.preventDefault();
+		ev.stopPropagation();
 		$(window).scrollTop(0,0)
 	},
 	// 重新加载列表页
