@@ -76,9 +76,9 @@ define(function(require){
 	},
 	// 绑定事件
 	events:{
-		"click .search-click":"showSearch",
-		"click .nav li":"showListItem",
-		"click .list .back":"showListBack",
+		"tap .search-click":"showSearch",
+		"tap .nav li":"showListItem",
+		"tap .list .back":"showListBack",
 		"tap .list .go-top":"showTop",
 		"tap .list .image-list img":"animationLayer",
 		"tap .list .login":"showSkin"
@@ -114,7 +114,7 @@ define(function(require){
 	},
 	// 返回顶部
 	showTop:function(ev){
-		ev.preventDefault();
+		console.log(ev.target)
 		ev.stopPropagation();
 		$(window).scrollTop(0,0)
 	},
