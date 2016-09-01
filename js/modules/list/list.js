@@ -114,9 +114,11 @@ define(function(require){
 	},
 	// 返回顶部
 	showTop:function(ev){
-		console.log(ev.target)
-		ev.stopPropagation();
-		$(window).scrollTop(0,0)
+	ev.stopPropagation();
+	if(ev.target.className=="go-top"){
+	$(window).scrollTop(0,0)
+	}
+	return false;
 	},
 	// 重新加载列表页
 	showListBack:function(){
